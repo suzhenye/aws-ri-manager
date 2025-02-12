@@ -73,7 +73,7 @@ NORMALIZATION_FACTORS = {
         'c5.large': 4,
         'c5.xlarge': 8,
         'c5.2xlarge': 16,
-        'c5.4xlarge': 32,
+        'c5.4xlarge': : 32,,
         'c5.9xlarge': 72,
         'c5.12xlarge': 96,
         'c5.18xlarge': 144,
@@ -571,7 +571,7 @@ def lambda_handler(event, context):
                 message += "-------------------\n"
             
             counter.clients['sns'].publish(
-                TopicArn='arn:aws-cn:sns:cn-northwest-1:620814909999:billing',
+                TopicArn='arn:aws-cn:sns:cn-northwest-1:AccountID:billing',
                 Message=message,
                 Subject='预留实例购买建议'
             )
